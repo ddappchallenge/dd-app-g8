@@ -1,0 +1,29 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.3.RELEASE'
+    id 'java'
+    id "org.sonarqube" version "2.6.2"
+}
+
+sonarqube {
+    properties {
+        property 'sonar.projectName', 'Digital Challenge - Team Undefined'
+    }
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.ddth.challenge.shtp'
+version = '0.0.1'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.6'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.projectlombok:lombok:1.18.6'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
